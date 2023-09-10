@@ -12,6 +12,7 @@ import java.util.List;
 
 @Service
 public class ScheduleService {
+    
     @Value("${custom.file-path}")
     private String filePath;
     public List<Schedule> getSchedules() throws IOException {
@@ -20,10 +21,9 @@ public class ScheduleService {
                     .withType(Schedule.class)
                     .withIgnoreLeadingWhiteSpace(true)
                     .build();
-
             return csvToBean.parse();
         } catch (IOException e) {
-            throw new IOException("Ошибка при чтении CSV-файла", e);//КОНСТАНТА
+            throw new IOException("Error reading CSV file", e);
         }
     }
 }
