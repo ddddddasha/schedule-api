@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/")
 public class ScheduleController {
+    
     private final ScheduleService scheduleService;
 
     @GetMapping
